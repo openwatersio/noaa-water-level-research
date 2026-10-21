@@ -1,0 +1,815 @@
+{
+  "status": "disagreement",
+  "manifest": "/Users/clarkbw/src/openwaters/.local/etss-collection/data/forecasts/attempt-20261021-00-b888b309ddd34669ac25dee9390fcfda.json",
+  "cycleAt": "2026-10-21T00:00:00Z",
+  "scope": "West: Friday Harbor, Port Townsend, Seattle; native export consistency only",
+  "scoringPermitted": false,
+  "adapterAccepted": false,
+  "receiptIsFirstPublication": false,
+  "atomicPublication": false,
+  "products": {
+    "shef": {
+      "state": "complete",
+      "status": 200,
+      "url": "https://nomads.ncep.noaa.gov/pub/data/nccf/com/petss/prod/etss.20261021/etss.t00z.shef.tar.gz",
+      "returnedUrl": "https://nomads.ncep.noaa.gov/pub/data/nccf/com/petss/prod/etss.20261021/etss.t00z.shef.tar.gz",
+      "sha256": "21baeb0b0625a53880f9227c1a39f89788d99d85c8c326b6116f3b15ca568ca7",
+      "requestStartedAt": "2026-10-21T16:54:30.200467Z",
+      "responseReceivedAt": "2026-10-21T16:54:30.290320Z",
+      "receivedAt": "2026-10-21T16:54:30.303386Z",
+      "finishedAt": "2026-10-21T16:54:30.303431Z",
+      "headers": {
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Security-Policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval' *;",
+        "Referrer-Policy": "no-referrer",
+        "Cache-Control": "no-cache, private, max-age=14400",
+        "Last-Modified": "Wed, 21 Oct 2026 05:38:15 GMT",
+        "Accept-Ranges": "bytes",
+        "Content-Length": "124069",
+        "Expires": "Wed, 21 Oct 2026 09:55:00 GMT",
+        "Content-Type": "application/x-gzip",
+        "Date": "Wed, 21 Oct 2026 16:54:30 GMT",
+        "Connection": "close",
+        "Akamai-Request-BC": "[a=184.30.149.110,b=1557634490,c=g,n=CA_BC_VANCOUVER,o=20940]",
+        "Strict-Transport-Security": "max-age=31536000 ; preload"
+      },
+      "error": null
+    },
+    "csv": {
+      "state": "complete",
+      "status": 200,
+      "url": "https://nomads.ncep.noaa.gov/pub/data/nccf/com/petss/prod/etss.20261021/etss.t00z.csv.tar.gz",
+      "returnedUrl": "https://nomads.ncep.noaa.gov/pub/data/nccf/com/petss/prod/etss.20261021/etss.t00z.csv.tar.gz",
+      "sha256": "0721fe9d68cdd18cf711ee2038c9b7441a914b63396a9daccb990a2cada37fe0",
+      "requestStartedAt": "2026-10-21T16:54:30.310111Z",
+      "responseReceivedAt": "2026-10-21T16:54:30.397098Z",
+      "receivedAt": "2026-10-21T16:54:30.504827Z",
+      "finishedAt": "2026-10-21T16:54:30.504851Z",
+      "headers": {
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Security-Policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval' *;",
+        "Referrer-Policy": "no-referrer",
+        "Cache-Control": "no-cache, private, max-age=14400",
+        "Accept-Ranges": "bytes",
+        "Expires": "Wed, 21 Oct 2026 09:55:00 GMT",
+        "Content-Type": "application/x-gzip",
+        "Last-Modified": "Wed, 21 Oct 2026 05:38:11 GMT",
+        "Content-Length": "8808244",
+        "Date": "Wed, 21 Oct 2026 16:54:30 GMT",
+        "Connection": "close",
+        "Akamai-Request-BC": "[a=184.30.149.110,b=1557634911,c=g,n=CA_BC_VANCOUVER,o=20940]",
+        "Strict-Transport-Security": "max-age=31536000 ; preload"
+      },
+      "error": null
+    }
+  },
+  "stations": {
+    "FRDW1": {
+      "stationId": "9449880",
+      "status": "consistent",
+      "flags": [],
+      "declaredStart": "2026-10-21T00:00:00Z",
+      "declaredEnd": "2026-10-25T05:00:00Z",
+      "bulletinCreatedAt": "2026-10-21T05:37:00Z",
+      "parameter": "HMIFV",
+      "datum": "MLLW",
+      "units": "feet",
+      "timeZone": "UTC",
+      "printedDecimals": 3,
+      "sameTime": {
+        "compared": 102,
+        "missing": 0,
+        "maxAbsFeet": "0.000",
+        "toleranceFeet": "0.001",
+        "disagreements": []
+      },
+      "csv": {
+        "rows": 2221,
+        "missingRows": 0,
+        "start": "2026-10-16T00:00:00Z",
+        "end": "2026-10-25T06:00:00Z",
+        "observedSpanComplete": true,
+        "expectedStart": "2026-10-16T00:00:00Z",
+        "expectedEnd": "2026-10-25T06:00:00Z",
+        "declarationSource": "paired SHEF and observed October 2026 export contract"
+      },
+      "arithmetic": {
+        "formula": "TWL = TIDE + SURGE + BIAS",
+        "compared": 222,
+        "missingComponents": 1999,
+        "maxAbsFeet": "0.000",
+        "toleranceFeet": "0.002",
+        "exceptions": []
+      }
+    },
+    "PTWW1": {
+      "stationId": "9444900",
+      "status": "consistent",
+      "flags": [],
+      "declaredStart": "2026-10-21T00:00:00Z",
+      "declaredEnd": "2026-10-25T05:00:00Z",
+      "bulletinCreatedAt": "2026-10-21T05:37:00Z",
+      "parameter": "HMIFV",
+      "datum": "MLLW",
+      "units": "feet",
+      "timeZone": "UTC",
+      "printedDecimals": 3,
+      "sameTime": {
+        "compared": 102,
+        "missing": 0,
+        "maxAbsFeet": "0.000",
+        "toleranceFeet": "0.001",
+        "disagreements": []
+      },
+      "csv": {
+        "rows": 2221,
+        "missingRows": 0,
+        "start": "2026-10-16T00:00:00Z",
+        "end": "2026-10-25T06:00:00Z",
+        "observedSpanComplete": true,
+        "expectedStart": "2026-10-16T00:00:00Z",
+        "expectedEnd": "2026-10-25T06:00:00Z",
+        "declarationSource": "paired SHEF and observed October 2026 export contract"
+      },
+      "arithmetic": {
+        "formula": "TWL = TIDE + SURGE + BIAS",
+        "compared": 222,
+        "missingComponents": 1999,
+        "maxAbsFeet": "0.000",
+        "toleranceFeet": "0.002",
+        "exceptions": []
+      }
+    },
+    "EBSW1": {
+      "stationId": "9447130",
+      "status": "disagreement",
+      "flags": [],
+      "declaredStart": "2026-10-21T00:00:00Z",
+      "declaredEnd": "2026-10-25T05:00:00Z",
+      "bulletinCreatedAt": "2026-10-21T05:37:00Z",
+      "parameter": "HMIFV",
+      "datum": "MLLW",
+      "units": "feet",
+      "timeZone": "UTC",
+      "printedDecimals": 3,
+      "sameTime": {
+        "compared": 102,
+        "missing": 0,
+        "maxAbsFeet": "2.539",
+        "toleranceFeet": "0.001",
+        "disagreements": [
+          {
+            "validAt": "2026-10-21T00:00:00Z",
+            "shefFeet": "7.691",
+            "csvFeet": "8.990",
+            "errorFeet": "-1.299"
+          },
+          {
+            "validAt": "2026-10-21T01:00:00Z",
+            "shefFeet": "6.578",
+            "csvFeet": "7.691",
+            "errorFeet": "-1.113"
+          },
+          {
+            "validAt": "2026-10-21T02:00:00Z",
+            "shefFeet": "6.013",
+            "csvFeet": "6.578",
+            "errorFeet": "-0.565"
+          },
+          {
+            "validAt": "2026-10-21T03:00:00Z",
+            "shefFeet": "5.888",
+            "csvFeet": "6.013",
+            "errorFeet": "-0.125"
+          },
+          {
+            "validAt": "2026-10-21T04:00:00Z",
+            "shefFeet": "6.272",
+            "csvFeet": "5.888",
+            "errorFeet": "0.384"
+          },
+          {
+            "validAt": "2026-10-21T05:00:00Z",
+            "shefFeet": "7.010",
+            "csvFeet": "6.272",
+            "errorFeet": "0.738"
+          },
+          {
+            "validAt": "2026-10-21T06:00:00Z",
+            "shefFeet": "7.804",
+            "csvFeet": "7.010",
+            "errorFeet": "0.794"
+          },
+          {
+            "validAt": "2026-10-21T07:00:00Z",
+            "shefFeet": "8.322",
+            "csvFeet": "7.804",
+            "errorFeet": "0.518"
+          },
+          {
+            "validAt": "2026-10-21T08:00:00Z",
+            "shefFeet": "8.332",
+            "csvFeet": "8.322",
+            "errorFeet": "0.010"
+          },
+          {
+            "validAt": "2026-10-21T09:00:00Z",
+            "shefFeet": "7.843",
+            "csvFeet": "8.332",
+            "errorFeet": "-0.489"
+          },
+          {
+            "validAt": "2026-10-21T10:00:00Z",
+            "shefFeet": "6.729",
+            "csvFeet": "7.843",
+            "errorFeet": "-1.114"
+          },
+          {
+            "validAt": "2026-10-21T11:00:00Z",
+            "shefFeet": "5.345",
+            "csvFeet": "6.729",
+            "errorFeet": "-1.384"
+          },
+          {
+            "validAt": "2026-10-21T12:00:00Z",
+            "shefFeet": "3.953",
+            "csvFeet": "5.345",
+            "errorFeet": "-1.392"
+          },
+          {
+            "validAt": "2026-10-21T13:00:00Z",
+            "shefFeet": "3.107",
+            "csvFeet": "3.953",
+            "errorFeet": "-0.846"
+          },
+          {
+            "validAt": "2026-10-21T14:00:00Z",
+            "shefFeet": "2.960",
+            "csvFeet": "3.107",
+            "errorFeet": "-0.147"
+          },
+          {
+            "validAt": "2026-10-21T15:00:00Z",
+            "shefFeet": "3.672",
+            "csvFeet": "2.960",
+            "errorFeet": "0.712"
+          },
+          {
+            "validAt": "2026-10-21T16:00:00Z",
+            "shefFeet": "4.940",
+            "csvFeet": "3.672",
+            "errorFeet": "1.268"
+          },
+          {
+            "validAt": "2026-10-21T17:00:00Z",
+            "shefFeet": "6.659",
+            "csvFeet": "4.940",
+            "errorFeet": "1.719"
+          },
+          {
+            "validAt": "2026-10-21T18:00:00Z",
+            "shefFeet": "8.507",
+            "csvFeet": "6.659",
+            "errorFeet": "1.848"
+          },
+          {
+            "validAt": "2026-10-21T19:00:00Z",
+            "shefFeet": "10.075",
+            "csvFeet": "8.507",
+            "errorFeet": "1.568"
+          },
+          {
+            "validAt": "2026-10-21T20:00:00Z",
+            "shefFeet": "11.053",
+            "csvFeet": "10.075",
+            "errorFeet": "0.978"
+          },
+          {
+            "validAt": "2026-10-21T21:00:00Z",
+            "shefFeet": "11.403",
+            "csvFeet": "11.053",
+            "errorFeet": "0.350"
+          },
+          {
+            "validAt": "2026-10-21T22:00:00Z",
+            "shefFeet": "10.921",
+            "csvFeet": "11.403",
+            "errorFeet": "-0.482"
+          },
+          {
+            "validAt": "2026-10-21T23:00:00Z",
+            "shefFeet": "9.806",
+            "csvFeet": "10.921",
+            "errorFeet": "-1.115"
+          },
+          {
+            "validAt": "2026-10-22T00:00:00Z",
+            "shefFeet": "8.291",
+            "csvFeet": "9.806",
+            "errorFeet": "-1.515"
+          },
+          {
+            "validAt": "2026-10-22T01:00:00Z",
+            "shefFeet": "6.757",
+            "csvFeet": "8.291",
+            "errorFeet": "-1.534"
+          },
+          {
+            "validAt": "2026-10-22T02:00:00Z",
+            "shefFeet": "5.630",
+            "csvFeet": "6.757",
+            "errorFeet": "-1.127"
+          },
+          {
+            "validAt": "2026-10-22T03:00:00Z",
+            "shefFeet": "5.175",
+            "csvFeet": "5.630",
+            "errorFeet": "-0.455"
+          },
+          {
+            "validAt": "2026-10-22T04:00:00Z",
+            "shefFeet": "5.403",
+            "csvFeet": "5.175",
+            "errorFeet": "0.228"
+          },
+          {
+            "validAt": "2026-10-22T05:00:00Z",
+            "shefFeet": "6.192",
+            "csvFeet": "5.403",
+            "errorFeet": "0.789"
+          },
+          {
+            "validAt": "2026-10-22T06:00:00Z",
+            "shefFeet": "7.334",
+            "csvFeet": "6.192",
+            "errorFeet": "1.142"
+          },
+          {
+            "validAt": "2026-10-22T07:00:00Z",
+            "shefFeet": "8.461",
+            "csvFeet": "7.334",
+            "errorFeet": "1.127"
+          },
+          {
+            "validAt": "2026-10-22T08:00:00Z",
+            "shefFeet": "9.151",
+            "csvFeet": "8.461",
+            "errorFeet": "0.690"
+          },
+          {
+            "validAt": "2026-10-22T09:00:00Z",
+            "shefFeet": "9.157",
+            "csvFeet": "9.151",
+            "errorFeet": "0.006"
+          },
+          {
+            "validAt": "2026-10-22T10:00:00Z",
+            "shefFeet": "8.477",
+            "csvFeet": "9.157",
+            "errorFeet": "-0.680"
+          },
+          {
+            "validAt": "2026-10-22T11:00:00Z",
+            "shefFeet": "7.275",
+            "csvFeet": "8.477",
+            "errorFeet": "-1.202"
+          },
+          {
+            "validAt": "2026-10-22T12:00:00Z",
+            "shefFeet": "5.807",
+            "csvFeet": "7.275",
+            "errorFeet": "-1.468"
+          },
+          {
+            "validAt": "2026-10-22T13:00:00Z",
+            "shefFeet": "4.421",
+            "csvFeet": "5.807",
+            "errorFeet": "-1.386"
+          },
+          {
+            "validAt": "2026-10-22T14:00:00Z",
+            "shefFeet": "3.426",
+            "csvFeet": "4.421",
+            "errorFeet": "-0.995"
+          },
+          {
+            "validAt": "2026-10-22T15:00:00Z",
+            "shefFeet": "3.327",
+            "csvFeet": "3.426",
+            "errorFeet": "-0.099"
+          },
+          {
+            "validAt": "2026-10-22T16:00:00Z",
+            "shefFeet": "4.065",
+            "csvFeet": "3.327",
+            "errorFeet": "0.738"
+          },
+          {
+            "validAt": "2026-10-22T17:00:00Z",
+            "shefFeet": "5.578",
+            "csvFeet": "4.065",
+            "errorFeet": "1.513"
+          },
+          {
+            "validAt": "2026-10-22T18:00:00Z",
+            "shefFeet": "7.427",
+            "csvFeet": "5.578",
+            "errorFeet": "1.849"
+          },
+          {
+            "validAt": "2026-10-22T19:00:00Z",
+            "shefFeet": "9.338",
+            "csvFeet": "7.427",
+            "errorFeet": "1.911"
+          },
+          {
+            "validAt": "2026-10-22T20:00:00Z",
+            "shefFeet": "10.730",
+            "csvFeet": "9.338",
+            "errorFeet": "1.392"
+          },
+          {
+            "validAt": "2026-10-22T21:00:00Z",
+            "shefFeet": "11.443",
+            "csvFeet": "10.730",
+            "errorFeet": "0.713"
+          },
+          {
+            "validAt": "2026-10-22T22:00:00Z",
+            "shefFeet": "11.361",
+            "csvFeet": "11.443",
+            "errorFeet": "-0.082"
+          },
+          {
+            "validAt": "2026-10-22T23:00:00Z",
+            "shefFeet": "10.355",
+            "csvFeet": "11.361",
+            "errorFeet": "-1.006"
+          },
+          {
+            "validAt": "2026-10-23T00:00:00Z",
+            "shefFeet": "8.732",
+            "csvFeet": "10.355",
+            "errorFeet": "-1.623"
+          },
+          {
+            "validAt": "2026-10-23T01:00:00Z",
+            "shefFeet": "6.749",
+            "csvFeet": "8.732",
+            "errorFeet": "-1.983"
+          },
+          {
+            "validAt": "2026-10-23T02:00:00Z",
+            "shefFeet": "5.087",
+            "csvFeet": "6.749",
+            "errorFeet": "-1.662"
+          },
+          {
+            "validAt": "2026-10-23T03:00:00Z",
+            "shefFeet": "4.105",
+            "csvFeet": "5.087",
+            "errorFeet": "-0.982"
+          },
+          {
+            "validAt": "2026-10-23T04:00:00Z",
+            "shefFeet": "3.910",
+            "csvFeet": "4.105",
+            "errorFeet": "-0.195"
+          },
+          {
+            "validAt": "2026-10-23T05:00:00Z",
+            "shefFeet": "4.642",
+            "csvFeet": "3.910",
+            "errorFeet": "0.732"
+          },
+          {
+            "validAt": "2026-10-23T06:00:00Z",
+            "shefFeet": "5.888",
+            "csvFeet": "4.642",
+            "errorFeet": "1.246"
+          },
+          {
+            "validAt": "2026-10-23T07:00:00Z",
+            "shefFeet": "7.488",
+            "csvFeet": "5.888",
+            "errorFeet": "1.600"
+          },
+          {
+            "validAt": "2026-10-23T08:00:00Z",
+            "shefFeet": "8.848",
+            "csvFeet": "7.488",
+            "errorFeet": "1.360"
+          },
+          {
+            "validAt": "2026-10-23T09:00:00Z",
+            "shefFeet": "9.561",
+            "csvFeet": "8.848",
+            "errorFeet": "0.713"
+          },
+          {
+            "validAt": "2026-10-23T10:00:00Z",
+            "shefFeet": "9.391",
+            "csvFeet": "9.561",
+            "errorFeet": "-0.170"
+          },
+          {
+            "validAt": "2026-10-23T11:00:00Z",
+            "shefFeet": "8.605",
+            "csvFeet": "9.391",
+            "errorFeet": "-0.786"
+          },
+          {
+            "validAt": "2026-10-23T12:00:00Z",
+            "shefFeet": "7.281",
+            "csvFeet": "8.605",
+            "errorFeet": "-1.324"
+          },
+          {
+            "validAt": "2026-10-23T13:00:00Z",
+            "shefFeet": "5.701",
+            "csvFeet": "7.281",
+            "errorFeet": "-1.580"
+          },
+          {
+            "validAt": "2026-10-23T14:00:00Z",
+            "shefFeet": "4.274",
+            "csvFeet": "5.701",
+            "errorFeet": "-1.427"
+          },
+          {
+            "validAt": "2026-10-23T15:00:00Z",
+            "shefFeet": "3.441",
+            "csvFeet": "4.274",
+            "errorFeet": "-0.833"
+          },
+          {
+            "validAt": "2026-10-23T16:00:00Z",
+            "shefFeet": "3.483",
+            "csvFeet": "3.441",
+            "errorFeet": "0.042"
+          },
+          {
+            "validAt": "2026-10-23T17:00:00Z",
+            "shefFeet": "4.410",
+            "csvFeet": "3.483",
+            "errorFeet": "0.927"
+          },
+          {
+            "validAt": "2026-10-23T18:00:00Z",
+            "shefFeet": "6.040",
+            "csvFeet": "4.410",
+            "errorFeet": "1.630"
+          },
+          {
+            "validAt": "2026-10-23T19:00:00Z",
+            "shefFeet": "8.050",
+            "csvFeet": "6.040",
+            "errorFeet": "2.010"
+          },
+          {
+            "validAt": "2026-10-23T20:00:00Z",
+            "shefFeet": "9.933",
+            "csvFeet": "8.050",
+            "errorFeet": "1.883"
+          },
+          {
+            "validAt": "2026-10-23T21:00:00Z",
+            "shefFeet": "11.140",
+            "csvFeet": "9.933",
+            "errorFeet": "1.207"
+          },
+          {
+            "validAt": "2026-10-23T22:00:00Z",
+            "shefFeet": "11.352",
+            "csvFeet": "11.140",
+            "errorFeet": "0.212"
+          },
+          {
+            "validAt": "2026-10-23T23:00:00Z",
+            "shefFeet": "10.549",
+            "csvFeet": "11.352",
+            "errorFeet": "-0.803"
+          },
+          {
+            "validAt": "2026-10-24T00:00:00Z",
+            "shefFeet": "8.918",
+            "csvFeet": "10.549",
+            "errorFeet": "-1.631"
+          },
+          {
+            "validAt": "2026-10-24T01:00:00Z",
+            "shefFeet": "6.794",
+            "csvFeet": "8.918",
+            "errorFeet": "-2.124"
+          },
+          {
+            "validAt": "2026-10-24T02:00:00Z",
+            "shefFeet": "4.633",
+            "csvFeet": "6.794",
+            "errorFeet": "-2.161"
+          },
+          {
+            "validAt": "2026-10-24T03:00:00Z",
+            "shefFeet": "2.976",
+            "csvFeet": "4.633",
+            "errorFeet": "-1.657"
+          },
+          {
+            "validAt": "2026-10-24T04:00:00Z",
+            "shefFeet": "2.298",
+            "csvFeet": "2.976",
+            "errorFeet": "-0.678"
+          },
+          {
+            "validAt": "2026-10-24T05:00:00Z",
+            "shefFeet": "2.766",
+            "csvFeet": "2.298",
+            "errorFeet": "0.468"
+          },
+          {
+            "validAt": "2026-10-24T06:00:00Z",
+            "shefFeet": "4.173",
+            "csvFeet": "2.766",
+            "errorFeet": "1.407"
+          },
+          {
+            "validAt": "2026-10-24T07:00:00Z",
+            "shefFeet": "6.098",
+            "csvFeet": "4.173",
+            "errorFeet": "1.925"
+          },
+          {
+            "validAt": "2026-10-24T08:00:00Z",
+            "shefFeet": "8.043",
+            "csvFeet": "6.098",
+            "errorFeet": "1.945"
+          },
+          {
+            "validAt": "2026-10-24T09:00:00Z",
+            "shefFeet": "9.522",
+            "csvFeet": "8.043",
+            "errorFeet": "1.479"
+          },
+          {
+            "validAt": "2026-10-24T10:00:00Z",
+            "shefFeet": "10.217",
+            "csvFeet": "9.522",
+            "errorFeet": "0.695"
+          },
+          {
+            "validAt": "2026-10-24T11:00:00Z",
+            "shefFeet": "10.043",
+            "csvFeet": "10.217",
+            "errorFeet": "-0.174"
+          },
+          {
+            "validAt": "2026-10-24T12:00:00Z",
+            "shefFeet": "9.105",
+            "csvFeet": "10.043",
+            "errorFeet": "-0.938"
+          },
+          {
+            "validAt": "2026-10-24T13:00:00Z",
+            "shefFeet": "7.650",
+            "csvFeet": "9.105",
+            "errorFeet": "-1.455"
+          },
+          {
+            "validAt": "2026-10-24T14:00:00Z",
+            "shefFeet": "6.021",
+            "csvFeet": "7.650",
+            "errorFeet": "-1.629"
+          },
+          {
+            "validAt": "2026-10-24T15:00:00Z",
+            "shefFeet": "4.628",
+            "csvFeet": "6.021",
+            "errorFeet": "-1.393"
+          },
+          {
+            "validAt": "2026-10-24T16:00:00Z",
+            "shefFeet": "4.010",
+            "csvFeet": "4.628",
+            "errorFeet": "-0.618"
+          },
+          {
+            "validAt": "2026-10-24T17:00:00Z",
+            "shefFeet": "4.272",
+            "csvFeet": "4.010",
+            "errorFeet": "0.262"
+          },
+          {
+            "validAt": "2026-10-24T18:00:00Z",
+            "shefFeet": "5.496",
+            "csvFeet": "4.272",
+            "errorFeet": "1.224"
+          },
+          {
+            "validAt": "2026-10-24T19:00:00Z",
+            "shefFeet": "7.377",
+            "csvFeet": "5.496",
+            "errorFeet": "1.881"
+          },
+          {
+            "validAt": "2026-10-24T20:00:00Z",
+            "shefFeet": "9.425",
+            "csvFeet": "7.377",
+            "errorFeet": "2.048"
+          },
+          {
+            "validAt": "2026-10-24T21:00:00Z",
+            "shefFeet": "11.045",
+            "csvFeet": "9.425",
+            "errorFeet": "1.620"
+          },
+          {
+            "validAt": "2026-10-24T22:00:00Z",
+            "shefFeet": "11.725",
+            "csvFeet": "11.045",
+            "errorFeet": "0.680"
+          },
+          {
+            "validAt": "2026-10-24T23:00:00Z",
+            "shefFeet": "11.258",
+            "csvFeet": "11.725",
+            "errorFeet": "-0.467"
+          },
+          {
+            "validAt": "2026-10-25T00:00:00Z",
+            "shefFeet": "9.757",
+            "csvFeet": "11.258",
+            "errorFeet": "-1.501"
+          },
+          {
+            "validAt": "2026-10-25T01:00:00Z",
+            "shefFeet": "7.531",
+            "csvFeet": "9.757",
+            "errorFeet": "-2.226"
+          },
+          {
+            "validAt": "2026-10-25T02:00:00Z",
+            "shefFeet": "4.992",
+            "csvFeet": "7.531",
+            "errorFeet": "-2.539"
+          },
+          {
+            "validAt": "2026-10-25T03:00:00Z",
+            "shefFeet": "2.664",
+            "csvFeet": "4.992",
+            "errorFeet": "-2.328"
+          },
+          {
+            "validAt": "2026-10-25T04:00:00Z",
+            "shefFeet": "0.869",
+            "csvFeet": "2.664",
+            "errorFeet": "-1.795"
+          },
+          {
+            "validAt": "2026-10-25T05:00:00Z",
+            "shefFeet": "0.654",
+            "csvFeet": "0.869",
+            "errorFeet": "-0.215"
+          }
+        ]
+      },
+      "csv": {
+        "rows": 2221,
+        "missingRows": 0,
+        "start": "2026-10-16T00:00:00Z",
+        "end": "2026-10-25T06:00:00Z",
+        "observedSpanComplete": true,
+        "expectedStart": "2026-10-16T00:00:00Z",
+        "expectedEnd": "2026-10-25T06:00:00Z",
+        "declarationSource": "paired SHEF and observed October 2026 export contract"
+      },
+      "arithmetic": {
+        "formula": "TWL = TIDE + SURGE + BIAS",
+        "compared": 222,
+        "missingComponents": 1999,
+        "maxAbsFeet": "0.000",
+        "toleranceFeet": "0.002",
+        "exceptions": []
+      }
+    }
+  },
+  "declarations": {
+    "title": ":SHEF ENCODED 1 HOUR STORM SURGE + TIDE GUIDANCE",
+    "provider": ":PROVIDED BY DOC/NOAA/NWS/OSTI/MDL",
+    "datum": "MLLW",
+    "units": "feet",
+    "timeZone": "UTC",
+    "parameter": "HMIFV",
+    "cadence": "DIH01",
+    "excludedStations": {
+      "HRVC1": "HMIFX",
+      "RYAC1": "HMIFX"
+    },
+    "region": "west"
+  }
+}
