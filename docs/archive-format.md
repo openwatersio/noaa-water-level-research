@@ -1,0 +1,15 @@
+# Evidence archive
+
+The `data` branch contains `runs/` (hosted start and terminal records), `catalog/` (one immutable archive record per batch), `evidence/` (unchanged original JSON manifests), `imports/` (frozen inventory and import start), and `recoveries/` (append-only custody/status updates). Binary bodies live only in Releases. `reports` contains append-only health and evaluation summaries. `main` contains code, frozen inputs and protocol.
+
+Every `receipts-<batch-id>` Release starts as a draft targeting the exact code commit. `context.json` (or a uniquely named retry after an incomplete upload) records collector origin (`legacy` or `github`), actual run identity and archive context. Original receipt clocks remain inside the original manifests. Neither import time nor Release publication time is a substitute for acquisition time.
+
+After every product fetch, the wrapper uploads new files in deterministic `bundle-<sha256>.tar.gz` assets and downloads them to verify their SHA-256 and length. Each bundle contains at most 32 MiB of original data. Tar members are sorted, regular files with zero timestamps; gzip timestamps are zero. These packaging timestamps describe packaging, never NOAA acquisition.
+
+The terminal `archive.json` (or its retry) contains `schemaVersion`, `context`, `tag`, `releaseId`, `archivedAt`, `completion`, `files` and `bundles`. Each file has its original relative path, SHA-256 and length. Each bundle has its stored SHA-256 and asset ID, name, length and public URL. Identical body paths are reused across catalogs; separate receipt records remain separate. Conflicts fail without overwriting evidence.
+
+Publication occurs only after verification. Repository release immutability must be enabled. The Git catalog is committed only after immutable publication and another complete verification. Incomplete upload placeholders are retained, and retry uploads receive new names. Recovery consolidates identical overlapping checkpoint members, rejects conflicting bytes, and records incomplete uploads separately. Recovery can reconstruct the catalog from either a draft's checkpoints or a published orphan without requesting NOAA again. A synthesized archive is marked `recovered_interrupted`; an already-complete immutable archive keeps its original completion state. Interrupted collection can carry `completion: interrupted`, and recovery includes `incompleteUploads` without removing those placeholders.
+
+Restoration verifies both stored and original hashes and lengths, rejects traversal, symlinks, duplicate members and decompression beyond 256 MiB per bundle, and refuses changed destination files. Run against an empty output directory. Original failures, partial bodies and start records are retained.
+
+GitHub remains a shared availability dependency. A runner can die between receipt and its next durable upload. Such evidence cannot be reconstructed as an original receipt. Draft checkpoints and failure artifacts preserve the bytes that reached them; start records and the audit expose unfinished attempts. Failure artifacts expire after 14 days and are a recovery aid, not the permanent archive.

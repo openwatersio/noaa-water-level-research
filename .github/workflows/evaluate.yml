@@ -1,0 +1,32 @@
+name: Reproduce evaluation
+on:
+  schedule:
+    - cron: '37 16 * * *'
+  workflow_dispatch:
+    inputs:
+      request:
+        type: string
+        default: '{"phase":"development","first":"2026-10-14","last":"2026-10-16","truth_as_of":"2026-10-17T01:47:57.294377Z"}'
+        description: JSON request; see docs/operations.md for pinned inputs
+permissions:
+  contents: write
+concurrency:
+  group: evaluation
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    if: github.repository == 'openwatersio/noaa-water-level-research' && github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || vars.COLLECTION_ENABLED == 'true')
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_TOKEN: ${{ github.token }}
+      EVALUATION_REQUEST: ${{ inputs.request }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Resolve an explicit snapshot and run phase gates
+        run: python -B -m pipeline.evaluate_request

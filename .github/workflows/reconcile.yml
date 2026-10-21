@@ -1,0 +1,30 @@
+name: Recover archived receipts
+on:
+  workflow_dispatch:
+    inputs:
+      stopped_import_tag:
+        type: string
+        required: false
+        description: Import draft tag; supply only after confirming that operator import has stopped
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: evidence-writer
+  cancel-in-progress: false
+jobs:
+  recover:
+    if: github.repository == 'openwatersio/noaa-water-level-research' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+      STOPPED_IMPORT_TAG: ${{ inputs.stopped_import_tag }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: python -B -m pipeline --work "$RUNNER_TEMP/noaa" reconcile --stopped-import-tag "$STOPPED_IMPORT_TAG"

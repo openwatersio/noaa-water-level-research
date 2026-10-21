@@ -1,0 +1,37 @@
+name: Collect NOAA receipts
+on:
+  schedule:
+    - cron: '50 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: evidence-writer
+  cancel-in-progress: false
+jobs:
+  collect:
+    if: github.repository == 'openwatersio/noaa-water-level-research' && github.ref == 'refs/heads/main' && vars.COLLECTION_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Preserve one original acquisition
+        timeout-minutes: 20
+        run: python -B -m pipeline --work "$RUNNER_TEMP/noaa" collect
+      - name: Retain interrupted local evidence for recovery
+        if: failure() || cancelled()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: interrupted-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/noaa/receipts
+            ${{ runner.temp }}/noaa/data/runs
+          retention-days: 14
+          if-no-files-found: ignore

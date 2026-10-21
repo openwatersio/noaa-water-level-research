@@ -12,3 +12,8 @@ class BaselineTests(unittest.TestCase):
         for name, expected in pin["files"].items():
             self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), expected, name)
         self.assertEqual(hashlib.sha256((ROOT / "inputs/tides.json").read_bytes()).hexdigest(), pin["tideBundleSha256"])
+
+    def test_complete_upstream_source_inventory_is_unchanged(self):
+        source = json.loads((ROOT / 'protocols/source-provenance.json').read_text())
+        for name, expected in source['files'].items():
+            self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), expected, name)
