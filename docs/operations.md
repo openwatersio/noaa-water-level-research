@@ -8,6 +8,22 @@
 
 Schedules can be delayed or dropped, and public-repository schedules can be disabled after 60 days without activity. Actual start/receipt clocks are authoritative. Missing minute-50 windows are scheduling/acquisition gaps, not proof of a NOAA outage. An audit cannot notify during a GitHub-wide outage; failed audit workflows are themselves actionable. Re-running a collection job makes a new attempt with new receipt times. Reconcile saved bytes before re-fetching when recovering a failed publication.
 
+## Missing scheduled runs
+
+Check schedule events separately from manual runs:
+
+```sh
+gh run list --repo openwatersio/noaa-water-level-research --event schedule --limit 30 --json databaseId,workflowName,event,status,conclusion,createdAt,updatedAt,url
+gh workflow list --repo openwatersio/noaa-water-level-research --all
+gh variable list --repo openwatersio/noaa-water-level-research
+```
+
+If no scheduled run exists, investigate trigger delivery: the workflow's `on.schedule` must be on the repository's default branch, the workflow and Actions must be enabled, and the scheduling actor must be active. Check [GitHub's trigger troubleshooting](https://docs.github.com/en/actions/how-tos/troubleshoot-workflows#troubleshooting-workflow-triggers) and [service status](https://www.githubstatus.com/). `COLLECTION_ENABLED=true` permits the collection job to execute; it cannot make GitHub deliver a missing schedule event. A created run with a skipped job, a queued run, and an absent run are different failures.
+
+An operator can re-enable a workflow with `gh workflow enable collect.yml --repo openwatersio/noaa-water-level-research` (and similarly `audit.yml`). GitHub also documents committing a cron change with an active writer account to restore a schedule whose actor is unavailable. Preserve the hourly acquisition cadence and account for any changed slot definition in `pipeline/health.py`; changing the scientific decision times is not a scheduler repair.
+
+Verify recovery using an actual `schedule` run, its completed job, and a separately downloaded, hash-verified archive/catalog. A dispatch can preserve a new receipt or diagnose job execution, but it cannot establish scheduled operation or fill an earlier acquisition gap. If schedules remain absent after enabled-state and actor recovery checks, retain the workflow paths, commit hashes, missed UTC slots and API results for GitHub Support. Keep local overlap collection running and leave the acceptance clock unstarted until the migration checks pass.
+
 ## Commands
 
 Use Linux or macOS, Python 3.12+ and authenticated `gh` with access to this public repository. No Python dependencies are required. Use a fresh `--work` directory for each independent operation; it contains disposable branch checkouts and receipts. Preserve a failed work directory until recovered.
