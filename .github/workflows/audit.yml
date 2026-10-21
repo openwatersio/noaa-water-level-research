@@ -1,0 +1,38 @@
+name: Audit collection health
+on:
+  schedule:
+    - cron: '25 * * * *'
+    - cron: '17 8 1 * *'
+  workflow_dispatch:
+    inputs:
+      full:
+        type: boolean
+        default: false
+        description: Verify all historical assets
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: health-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    if: github.repository == 'openwatersio/noaa-water-level-research' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_TOKEN: ${{ github.token }}
+      FULL: ${{ inputs.full || github.event.schedule == '17 8 1 * *' }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Audit actual receipts and persistence
+        shell: bash
+        run: |
+          args=()
+          if [[ "$FULL" == true ]]; then args+=(--full); fi
+          python -B -m pipeline --work "$RUNNER_TEMP/noaa" audit --notify "${args[@]}"

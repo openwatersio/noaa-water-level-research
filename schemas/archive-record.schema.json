@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/openwatersio/noaa-water-level-research/schemas/archive-record.schema.json",
+  "title": "Original receipt archive record",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "context",
+    "tag",
+    "releaseId",
+    "archivedAt",
+    "completion",
+    "files",
+    "bundles"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "context": {
+      "type": "object",
+      "required": [
+        "batchId",
+        "origin",
+        "codeCommit"
+      ],
+      "properties": {
+        "batchId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9-]+$"
+        },
+        "origin": {
+          "enum": [
+            "legacy",
+            "github",
+            "test"
+          ]
+        },
+        "codeCommit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        }
+      }
+    },
+    "tag": {
+      "type": "string",
+      "pattern": "^receipts-[a-zA-Z0-9-]+$"
+    },
+    "releaseId": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "archivedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completion": {
+      "type": "string"
+    },
+    "files": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "sha256",
+          "bytes"
+        ],
+        "properties": {
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "bundles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "asset",
+          "sha256",
+          "encoding"
+        ],
+        "properties": {
+          "encoding": {
+            "const": "tar+gzip"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "asset": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "size"
+            ],
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "name": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "browser_download_url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
