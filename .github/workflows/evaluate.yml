@@ -16,7 +16,7 @@ concurrency:
 jobs:
   evaluate:
     if: github.repository == 'openwatersio/noaa-water-level-research' && github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || vars.COLLECTION_ENABLED == 'true')
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
       GH_TOKEN: ${{ github.token }}
