@@ -1,0 +1,19 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "noaa-scheduling-watchdog",
+  "account_id": "7822da9c68cfce969e63d07534969359",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": true,
+  "preview_urls": false,
+  "triggers": { "crons": ["*/5 * * * *"] },
+  "vars": {
+    "WATCHDOG_ENABLED": "false",
+    "REVIEWED_COMMIT": ""
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "WATCHDOG", "class_name": "SchedulingWatchdog" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["SchedulingWatchdog"] }],
+  "observability": { "enabled": true }
+}

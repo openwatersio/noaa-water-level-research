@@ -160,9 +160,13 @@ def main():
         data, revision = pinned_data(args)
         result = {**materialize(data.path, Path(args.output), backend), 'dataCommit':revision}
     elif args.command == 'collect':
+        from pipeline.scheduling import admit, collection_enabled
         data = store_for(args, 'data')
         run = context('github')
-        result = run_hosted_tick(run, Path(args.work)/'receipts', data, backend)
+        actions_run = backend.api(f'actions/runs/{run["runId"]}')
+        event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
+        admitted = admit(run, data.path, actions_run, event.get('inputs') or {}, collection_enabled(args.repo))
+        result = admitted if 'skip' in admitted else run_hosted_tick(admitted, Path(args.work)/'receipts', data, backend)
     elif args.command in ('import','recover-artifact'):
         variables = []
         for page in range(1,10001):

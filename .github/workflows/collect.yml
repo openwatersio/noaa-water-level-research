@@ -1,10 +1,28 @@
 name: Collect NOAA receipts
+run-name: ${{ inputs.dispatch_id && format('NOAA receipts watchdog:{0}', inputs.dispatch_id) || 'NOAA receipts' }}
 on:
   schedule:
     - cron: '50 0-23 * * *'
   workflow_dispatch:
+    inputs:
+      slot:
+        description: 'External intended minute-50 UTC slot; leave all inputs empty for manual collection'
+        type: string
+      dispatch_id:
+        description: 'Durable external dispatch UUID'
+        type: string
+      dispatched_at:
+        description: 'Actual external dispatch reservation UTC clock'
+        type: string
+      cron_scheduled_at:
+        description: 'Cloudflare cron intended UTC clock'
+        type: string
+      expected_commit:
+        description: 'Exact reviewed main commit'
+        type: string
 permissions:
   contents: write
+  actions: read
 concurrency:
   group: evidence-writer
   cancel-in-progress: false
@@ -24,6 +42,8 @@ jobs:
           python-version: '3.12'
       - name: Preserve one original acquisition
         timeout-minutes: 20
+        env:
+          COLLECTION_CONTROL_TOKEN: ${{ secrets.COLLECTION_CONTROL_TOKEN }}
         run: python -B -m pipeline --work "$RUNNER_TEMP/noaa" collect
       - name: Retain interrupted local evidence for recovery
         if: failure() || cancelled()
