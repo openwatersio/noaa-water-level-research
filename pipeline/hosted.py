@@ -15,6 +15,11 @@ def run_hosted_tick(context, output, store, backend, collector=collect.collect_t
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     start = {**context, 'startedAt': now(), 'state': 'started'}
+    if context.get('scheduling'):
+        from pipeline.scheduling import slot_at, slot_path
+        if slot_at(start['startedAt']) != context['scheduling']['slot']:
+            return {'skip':'expired_slot', 'slot':context['scheduling']['slot'], 'exitCode':0}
+        store.write(slot_path(context['scheduling']['slot']), encoded(start))
     store.write(f'runs/{context["batchId"]}-start.json', encoded(start))
     store.commit(f'Start acquisition {context["batchId"]}')
     # Previous start records inform the original collector's acquisition-gap diagnostic.

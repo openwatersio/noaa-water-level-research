@@ -1,6 +1,6 @@
 # Evidence archive
 
-The `data` branch contains `runs/` (hosted start and terminal records), `catalog/` (one immutable archive record per batch), `evidence/` (unchanged original JSON manifests), `imports/` (frozen inventory and import start), and `recoveries/` (append-only custody/status updates). Binary bodies live only in Releases. `reports` contains append-only health and evaluation summaries. `main` contains code, frozen inputs and protocol.
+The `data` branch contains `runs/` (hosted start and terminal records), `catalog/` (one immutable archive record per batch), `evidence/` (unchanged original JSON manifests), `imports/` (frozen inventory and import start), `recoveries/` (append-only custody/status updates), and `scheduling/slots/` (hourly admission claims committed with guarded hosted starts). Binary bodies live only in Releases. `reports` contains append-only health and evaluation summaries. `main` contains code, frozen inputs and protocol.
 
 Every `receipts-<batch-id>` Release starts as a draft targeting the exact code commit. `context.json` (or a uniquely named retry after an incomplete upload) records collector origin (`legacy` or `github`), actual run identity and archive context. Original receipt clocks remain inside the original manifests. Neither import time nor Release publication time is a substitute for acquisition time.
 
