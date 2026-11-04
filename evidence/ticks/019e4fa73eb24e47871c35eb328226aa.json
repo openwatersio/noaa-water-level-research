@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "attemptId": "019e4fa73eb24e47871c35eb328226aa",
+  "startedAt": "2026-11-04T21:51:21.809324Z",
+  "startManifest": "ticks/019e4fa73eb24e47871c35eb328226aa-start.json",
+  "manifest": "ticks/019e4fa73eb24e47871c35eb328226aa.json",
+  "acquisitionGap": null,
+  "observationWindow": {
+    "beginAt": "2026-10-30T21:48:00Z",
+    "endAt": "2026-11-04T21:48:00Z"
+  },
+  "forecastCycles": [
+    "2026-11-04T18:00:00Z",
+    "2026-11-04T12:00:00Z",
+    "2026-11-04T06:00:00Z"
+  ],
+  "observationStore": "observations",
+  "forecastStore": "forecasts",
+  "limits": {
+    "maxBytesPerProduct": 16777216,
+    "timeoutSeconds": 30
+  },
+  "observations": [
+    {
+      "station": "9449880",
+      "manifest": "observations/attempt-019e4fa73eb24e47871c35eb328226aa-9449880.json",
+      "state": "complete",
+      "error": null
+    },
+    {
+      "station": "9444900",
+      "manifest": "observations/attempt-019e4fa73eb24e47871c35eb328226aa-9444900.json",
+      "state": "complete",
+      "error": null
+    },
+    {
+      "station": "9447130",
+      "manifest": "observations/attempt-019e4fa73eb24e47871c35eb328226aa-9447130.json",
+      "state": "complete",
+      "error": null
+    }
+  ],
+  "forecasts": [
+    {
+      "cycleAt": "2026-11-04T18:00:00Z",
+      "manifest": "forecasts/attempt-20261104-18-e0346bcd3aa0436b96f556ce70fd87ed.json",
+      "state": "expected_unpublished",
+      "products": {
+        "shef": {
+          "state": "http_error",
+          "httpStatus": 404
+        },
+        "csv": {
+          "state": "http_error",
+          "httpStatus": 404
+        }
+      },
+      "contractStatus": null,
+      "contractReport": null
+    },
+    {
+      "cycleAt": "2026-11-04T12:00:00Z",
+      "manifest": "forecasts/attempt-20261104-12-a26cbc69bcf94263b6ce94d7d3979257.json",
+      "state": "complete",
+      "products": {
+        "shef": {
+          "state": "complete",
+          "httpStatus": 200
+        },
+        "csv": {
+          "state": "complete",
+          "httpStatus": 200
+        }
+      },
+      "contractStatus": "disagreement",
+      "contractReport": "forecasts/attempt-20261104-12-a26cbc69bcf94263b6ce94d7d3979257-contract.json"
+    },
+    {
+      "cycleAt": "2026-11-04T06:00:00Z",
+      "manifest": "forecasts/attempt-20261104-06-1a8a248367d44fe4993eb5c062fdd44e.json",
+      "state": "complete",
+      "products": {
+        "shef": {
+          "state": "complete",
+          "httpStatus": 200
+        },
+        "csv": {
+          "state": "complete",
+          "httpStatus": 200
+        }
+      },
+      "contractStatus": "disagreement",
+      "contractReport": "forecasts/attempt-20261104-06-1a8a248367d44fe4993eb5c062fdd44e-contract.json"
+    }
+  ],
+  "state": "complete_with_unpublished",
+  "exitCode": 0,
+  "finishedAt": "2026-11-04T21:51:52.397528Z"
+}
