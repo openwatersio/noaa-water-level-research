@@ -59,7 +59,7 @@ Rolling collection back to code without the guard requires disabling the Worker 
 
 ## Prospective external-mechanism acceptance
 
-Migration acceptance has not passed. The failed October 22–24 review in issue #1 remains evidence. External dispatches never establish native `schedule` recovery. The user-selected external mechanism requires its own prospective review, and the acceptance record must explicitly identify the selected mechanism and reviewed code/deployment.
+The [November 1–3 external-mechanism acceptance review](https://github.com/openwatersio/noaa-water-level-research/issues/1#issuecomment-6618678849) passed for the fixed 48-hour interval. Its [immutable evidence](https://github.com/openwatersio/noaa-water-level-research/releases/tag/migration-acceptance-20261103) retains all failures, original clocks, archive checks, checkpoint comparisons and recovery/replay results. The source boundary is November 4, 2026 at 03:00 UTC; final delta import, final inventory and post-boundary cron-driven collection/audit verification remain outstanding. The failed October 22–24 review remains evidence. External dispatches never establish native `schedule` recovery. The prospective review requirements below remain the operating contract for this mechanism.
 
 Start a new review interval only after activation and independent verification of the first actual cron-driven acquisition on reviewed main. Review at least 48 hours of demonstrated operation, including every intervening 02:00 UTC scientific cutoff and 14:00 UTC operational checkpoint. Elapsed time alone cannot pass. Retain local overlap and the existing source selection until all checks pass.
 
