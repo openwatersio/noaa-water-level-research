@@ -1,9 +1,13 @@
 {
   "schemaVersion": 1,
-  "mode": "overlap_pending",
-  "boundaryAt": null,
+  "mode": "scheduled_cutover",
+  "boundaryAt": "2026-11-04T03:00:00Z",
+  "publicationTag": "collector-transition-20261104T030000Z",
   "primaryBeforeBoundary": "legacy",
   "primaryAtAndAfterBoundary": "github",
   "minimumOverlapHours": 48,
-  "rule": "No hosted shadow receipt enters primary evaluation before a future source boundary is published and the handoff is verified."
+  "acceptanceEvidenceTag": "migration-acceptance-20261103",
+  "acceptanceIntervalStart": "2026-11-01T23:13:40.686913Z",
+  "acceptanceIntervalEnd": "2026-11-03T23:13:40.686913Z",
+  "rule": "Legacy receipts are primary before boundaryAt; GitHub receipts are primary at and after boundaryAt. Every product in a forecast manifest must satisfy its source's boundary rule; a manifest spanning the boundary remains shadow evidence. Retain all original receipts. Final delta import and post-boundary inventory, cron-driven collection and audit verification are required before declaring migration complete."
 }
