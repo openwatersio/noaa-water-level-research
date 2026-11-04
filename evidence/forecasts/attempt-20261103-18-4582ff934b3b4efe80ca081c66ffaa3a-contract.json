@@ -1,0 +1,202 @@
+{
+  "status": "consistent",
+  "manifest": "/Users/clarkbw/src/openwaters/.local/etss-collection/data/forecasts/attempt-20261103-18-4582ff934b3b4efe80ca081c66ffaa3a.json",
+  "cycleAt": "2026-11-03T18:00:00Z",
+  "scope": "West: Friday Harbor, Port Townsend, Seattle; native export consistency only",
+  "scoringPermitted": false,
+  "adapterAccepted": false,
+  "receiptIsFirstPublication": false,
+  "atomicPublication": false,
+  "products": {
+    "shef": {
+      "state": "complete",
+      "status": 200,
+      "url": "https://nomads.ncep.noaa.gov/pub/data/nccf/com/petss/prod/etss.20261103/etss.t18z.shef.tar.gz",
+      "returnedUrl": "https://nomads.ncep.noaa.gov/pub/data/nccf/com/petss/prod/etss.20261103/etss.t18z.shef.tar.gz",
+      "sha256": "9a24c8050401d875e646f8ef4e9267f3ff7da46c384c55210c0df31f9380c400",
+      "requestStartedAt": "2026-11-04T01:52:50.990761Z",
+      "responseReceivedAt": "2026-11-04T01:52:51.030315Z",
+      "receivedAt": "2026-11-04T01:52:51.040941Z",
+      "finishedAt": "2026-11-04T01:52:51.040965Z",
+      "headers": {
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Security-Policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval' *;",
+        "Referrer-Policy": "no-referrer",
+        "Cache-Control": "no-cache, private, max-age=14400",
+        "Last-Modified": "Tue, 03 Nov 2026 22:51:50 GMT",
+        "Accept-Ranges": "bytes",
+        "Content-Length": "123082",
+        "Expires": "Wed, 04 Nov 2026 03:49:15 GMT",
+        "Content-Type": "application/x-gzip",
+        "Date": "Wed, 04 Nov 2026 01:52:51 GMT",
+        "Connection": "close",
+        "Akamai-Request-BC": "[a=23.203.55.164,b=1882742365,c=g,n=CA_BC_VANCOUVER,o=20940]",
+        "Strict-Transport-Security": "max-age=31536000 ; preload"
+      },
+      "error": null
+    },
+    "csv": {
+      "state": "complete",
+      "status": 200,
+      "url": "https://nomads.ncep.noaa.gov/pub/data/nccf/com/petss/prod/etss.20261103/etss.t18z.csv.tar.gz",
+      "returnedUrl": "https://nomads.ncep.noaa.gov/pub/data/nccf/com/petss/prod/etss.20261103/etss.t18z.csv.tar.gz",
+      "sha256": "1d350cda0091803ec5db7c58be61656141fba6e639723da230732842478bacda",
+      "requestStartedAt": "2026-11-04T01:52:51.043793Z",
+      "responseReceivedAt": "2026-11-04T01:52:51.113783Z",
+      "receivedAt": "2026-11-04T01:52:51.210834Z",
+      "finishedAt": "2026-11-04T01:52:51.210859Z",
+      "headers": {
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Content-Security-Policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval' *;",
+        "Referrer-Policy": "no-referrer",
+        "Cache-Control": "no-cache, private, max-age=14400",
+        "Accept-Ranges": "bytes",
+        "Expires": "Wed, 04 Nov 2026 02:53:12 GMT",
+        "Content-Type": "application/x-gzip",
+        "Last-Modified": "Tue, 03 Nov 2026 22:51:52 GMT",
+        "Content-Length": "8939266",
+        "Date": "Wed, 04 Nov 2026 01:52:51 GMT",
+        "Connection": "close",
+        "Akamai-Request-BC": "[a=23.203.55.172,b=2266790538,c=g,n=CA_BC_VANCOUVER,o=20940]",
+        "Strict-Transport-Security": "max-age=31536000 ; preload"
+      },
+      "error": null
+    }
+  },
+  "stations": {
+    "FRDW1": {
+      "stationId": "9449880",
+      "status": "consistent",
+      "flags": [],
+      "declaredStart": "2026-11-03T18:00:00Z",
+      "declaredEnd": "2026-11-07T23:00:00Z",
+      "bulletinCreatedAt": "2026-11-03T22:50:00Z",
+      "parameter": "HMIFV",
+      "datum": "MLLW",
+      "units": "feet",
+      "timeZone": "UTC",
+      "printedDecimals": 3,
+      "sameTime": {
+        "compared": 102,
+        "missing": 0,
+        "maxAbsFeet": "0.000",
+        "toleranceFeet": "0.001",
+        "disagreements": []
+      },
+      "csv": {
+        "rows": 2221,
+        "missingRows": 0,
+        "start": "2026-10-29T18:00:00Z",
+        "end": "2026-11-08T00:00:00Z",
+        "observedSpanComplete": true,
+        "expectedStart": "2026-10-29T18:00:00Z",
+        "expectedEnd": "2026-11-08T00:00:00Z",
+        "declarationSource": "paired SHEF and observed October 2026 export contract"
+      },
+      "arithmetic": {
+        "formula": "TWL = TIDE + SURGE + BIAS",
+        "compared": 222,
+        "missingComponents": 1999,
+        "maxAbsFeet": "0.001",
+        "toleranceFeet": "0.002",
+        "exceptions": []
+      }
+    },
+    "PTWW1": {
+      "stationId": "9444900",
+      "status": "consistent",
+      "flags": [],
+      "declaredStart": "2026-11-03T18:00:00Z",
+      "declaredEnd": "2026-11-07T23:00:00Z",
+      "bulletinCreatedAt": "2026-11-03T22:50:00Z",
+      "parameter": "HMIFV",
+      "datum": "MLLW",
+      "units": "feet",
+      "timeZone": "UTC",
+      "printedDecimals": 3,
+      "sameTime": {
+        "compared": 102,
+        "missing": 0,
+        "maxAbsFeet": "0.000",
+        "toleranceFeet": "0.001",
+        "disagreements": []
+      },
+      "csv": {
+        "rows": 2221,
+        "missingRows": 0,
+        "start": "2026-10-29T18:00:00Z",
+        "end": "2026-11-08T00:00:00Z",
+        "observedSpanComplete": true,
+        "expectedStart": "2026-10-29T18:00:00Z",
+        "expectedEnd": "2026-11-08T00:00:00Z",
+        "declarationSource": "paired SHEF and observed October 2026 export contract"
+      },
+      "arithmetic": {
+        "formula": "TWL = TIDE + SURGE + BIAS",
+        "compared": 222,
+        "missingComponents": 1999,
+        "maxAbsFeet": "0.000",
+        "toleranceFeet": "0.002",
+        "exceptions": []
+      }
+    },
+    "EBSW1": {
+      "stationId": "9447130",
+      "status": "consistent",
+      "flags": [],
+      "declaredStart": "2026-11-03T18:00:00Z",
+      "declaredEnd": "2026-11-07T23:00:00Z",
+      "bulletinCreatedAt": "2026-11-03T22:50:00Z",
+      "parameter": "HMIFV",
+      "datum": "MLLW",
+      "units": "feet",
+      "timeZone": "UTC",
+      "printedDecimals": 3,
+      "sameTime": {
+        "compared": 102,
+        "missing": 0,
+        "maxAbsFeet": "0.000",
+        "toleranceFeet": "0.001",
+        "disagreements": []
+      },
+      "csv": {
+        "rows": 2221,
+        "missingRows": 0,
+        "start": "2026-10-29T18:00:00Z",
+        "end": "2026-11-08T00:00:00Z",
+        "observedSpanComplete": true,
+        "expectedStart": "2026-10-29T18:00:00Z",
+        "expectedEnd": "2026-11-08T00:00:00Z",
+        "declarationSource": "paired SHEF and observed October 2026 export contract"
+      },
+      "arithmetic": {
+        "formula": "TWL = TIDE + SURGE + BIAS",
+        "compared": 222,
+        "missingComponents": 1999,
+        "maxAbsFeet": "0.000",
+        "toleranceFeet": "0.002",
+        "exceptions": []
+      }
+    }
+  },
+  "declarations": {
+    "title": ":SHEF ENCODED 1 HOUR STORM SURGE + TIDE GUIDANCE",
+    "provider": ":PROVIDED BY DOC/NOAA/NWS/OSTI/MDL",
+    "datum": "MLLW",
+    "units": "feet",
+    "timeZone": "UTC",
+    "parameter": "HMIFV",
+    "cadence": "DIH01",
+    "excludedStations": {
+      "HRVC1": "HMIFX",
+      "RYAC1": "HMIFX"
+    },
+    "region": "west"
+  }
+}

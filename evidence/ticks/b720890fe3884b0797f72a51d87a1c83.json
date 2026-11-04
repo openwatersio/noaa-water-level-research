@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "attemptId": "b720890fe3884b0797f72a51d87a1c83",
+  "startedAt": "2026-10-21T19:29:47.745084Z",
+  "startManifest": "ticks/b720890fe3884b0797f72a51d87a1c83-start.json",
+  "manifest": "ticks/b720890fe3884b0797f72a51d87a1c83.json",
+  "acquisitionGap": {
+    "previousAttemptAt": "2026-10-21T17:53:20.765799Z",
+    "elapsedSeconds": 5786.979285,
+    "reason": "host_or_scheduler_acquisition_uncertainty"
+  },
+  "observationWindow": {
+    "beginAt": "2026-10-16T19:24:00Z",
+    "endAt": "2026-10-21T19:24:00Z"
+  },
+  "forecastCycles": [
+    "2026-10-21T18:00:00Z",
+    "2026-10-21T12:00:00Z",
+    "2026-10-21T06:00:00Z"
+  ],
+  "observationStore": "observations",
+  "forecastStore": "forecasts",
+  "limits": {
+    "maxBytesPerProduct": 16777216,
+    "timeoutSeconds": 30.0
+  },
+  "observations": [
+    {
+      "station": "9449880",
+      "manifest": "observations/attempt-b720890fe3884b0797f72a51d87a1c83-9449880.json",
+      "state": "request_error",
+      "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "station": "9444900",
+      "manifest": "observations/attempt-b720890fe3884b0797f72a51d87a1c83-9444900.json",
+      "state": "request_error",
+      "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "station": "9447130",
+      "manifest": "observations/attempt-b720890fe3884b0797f72a51d87a1c83-9447130.json",
+      "state": "request_error",
+      "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    }
+  ],
+  "forecasts": [
+    {
+      "cycleAt": "2026-10-21T18:00:00Z",
+      "manifest": "forecasts/attempt-20261021-18-4f5fe14f48ad411d83a2f11dc7623968.json",
+      "state": "collection_failed",
+      "products": {
+        "shef": {
+          "state": "request_error",
+          "httpStatus": null
+        },
+        "csv": {
+          "state": "request_error",
+          "httpStatus": null
+        }
+      },
+      "contractStatus": null,
+      "contractReport": null
+    },
+    {
+      "cycleAt": "2026-10-21T12:00:00Z",
+      "manifest": "forecasts/attempt-20261021-12-14a5053c77e94d2d95a627872eb5a7ac.json",
+      "state": "collection_failed",
+      "products": {
+        "shef": {
+          "state": "request_error",
+          "httpStatus": null
+        },
+        "csv": {
+          "state": "request_error",
+          "httpStatus": null
+        }
+      },
+      "contractStatus": null,
+      "contractReport": null
+    },
+    {
+      "cycleAt": "2026-10-21T06:00:00Z",
+      "manifest": "forecasts/attempt-20261021-06-ddebdc8576a647d58b260de487f64f22.json",
+      "state": "collection_failed",
+      "products": {
+        "shef": {
+          "state": "request_error",
+          "httpStatus": null
+        },
+        "csv": {
+          "state": "request_error",
+          "httpStatus": null
+        }
+      },
+      "contractStatus": null,
+      "contractReport": null
+    }
+  ],
+  "state": "collection_failed",
+  "exitCode": 1,
+  "finishedAt": "2026-10-21T19:29:47.875430Z"
+}
