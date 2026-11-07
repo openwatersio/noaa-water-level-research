@@ -1,0 +1,131 @@
+{
+  "archive": {
+    "releaseId": 437866956,
+    "tag": "receipts-20261107T215111Z-6f582ae7c6254252998ae19a52517306"
+  },
+  "context": {
+    "batchId": "20261107T215111Z-6f582ae7c6254252998ae19a52517306",
+    "codeCommit": "8e1b7c927016fd192a240caa05ea46f99c986523",
+    "createdAt": "2026-11-07T21:51:11.500276Z",
+    "event": "workflow_dispatch",
+    "origin": "github",
+    "python": "3.12.16 (main, Oct 26 2026, 02:48:44) [GCC 15.2.0]",
+    "runAttempt": "1",
+    "runId": "42417803568",
+    "scheduledAt": null,
+    "scheduling": {
+      "actionsCreatedAt": "2026-11-07T21:51:03Z",
+      "actionsStartedAt": "2026-11-07T21:51:03Z",
+      "admittedAt": "2026-11-07T21:51:12.140614Z",
+      "cronScheduledAt": "2026-11-07T21:50:57.575Z",
+      "dispatchId": "f09e8799-b415-420c-ba14-716a11eb95b2",
+      "dispatchedAt": "2026-11-07T21:51:02.061Z",
+      "expectedCommit": "8e1b7c927016fd192a240caa05ea46f99c986523",
+      "slot": "2026-11-07T21:50:00Z",
+      "source": "external-watchdog"
+    }
+  },
+  "exitCode": 0,
+  "finishedAt": "2026-11-07T21:51:57.076177Z",
+  "startedAt": "2026-11-07T21:51:12.146958Z",
+  "state": "complete",
+  "tick": {
+    "acquisitionGap": null,
+    "attemptId": "d0c8aee7119943cc9ad8a533d03216b4",
+    "exitCode": 0,
+    "finishedAt": "2026-11-07T21:51:49.014355Z",
+    "forecastCycles": [
+      "2026-11-07T18:00:00Z",
+      "2026-11-07T12:00:00Z",
+      "2026-11-07T06:00:00Z"
+    ],
+    "forecastStore": "forecasts",
+    "forecasts": [
+      {
+        "contractReport": null,
+        "contractStatus": null,
+        "cycleAt": "2026-11-07T18:00:00Z",
+        "manifest": "forecasts/attempt-20261107-18-442614fa8c3c40cf9d46ce6eb6e5d75c.json",
+        "products": {
+          "csv": {
+            "httpStatus": 404,
+            "state": "http_error"
+          },
+          "shef": {
+            "httpStatus": 404,
+            "state": "http_error"
+          }
+        },
+        "state": "expected_unpublished"
+      },
+      {
+        "contractReport": "forecasts/attempt-20261107-12-584d7798d3614283ae0840ff6defd548-contract.json",
+        "contractStatus": "disagreement",
+        "cycleAt": "2026-11-07T12:00:00Z",
+        "manifest": "forecasts/attempt-20261107-12-584d7798d3614283ae0840ff6defd548.json",
+        "products": {
+          "csv": {
+            "httpStatus": 200,
+            "state": "complete"
+          },
+          "shef": {
+            "httpStatus": 200,
+            "state": "complete"
+          }
+        },
+        "state": "complete"
+      },
+      {
+        "contractReport": "forecasts/attempt-20261107-06-da1f8443d0ad49deb1a9641339c850d1-contract.json",
+        "contractStatus": "disagreement",
+        "cycleAt": "2026-11-07T06:00:00Z",
+        "manifest": "forecasts/attempt-20261107-06-da1f8443d0ad49deb1a9641339c850d1.json",
+        "products": {
+          "csv": {
+            "httpStatus": 200,
+            "state": "complete"
+          },
+          "shef": {
+            "httpStatus": 200,
+            "state": "complete"
+          }
+        },
+        "state": "complete"
+      }
+    ],
+    "limits": {
+      "maxBytesPerProduct": 16777216,
+      "timeoutSeconds": 30
+    },
+    "manifest": "ticks/d0c8aee7119943cc9ad8a533d03216b4.json",
+    "observationStore": "observations",
+    "observationWindow": {
+      "beginAt": "2026-11-02T21:48:00Z",
+      "endAt": "2026-11-07T21:48:00Z"
+    },
+    "observations": [
+      {
+        "error": null,
+        "manifest": "observations/attempt-d0c8aee7119943cc9ad8a533d03216b4-9449880.json",
+        "state": "complete",
+        "station": "9449880"
+      },
+      {
+        "error": null,
+        "manifest": "observations/attempt-d0c8aee7119943cc9ad8a533d03216b4-9444900.json",
+        "state": "complete",
+        "station": "9444900"
+      },
+      {
+        "error": null,
+        "manifest": "observations/attempt-d0c8aee7119943cc9ad8a533d03216b4-9447130.json",
+        "state": "complete",
+        "station": "9447130"
+      }
+    ],
+    "schemaVersion": 1,
+    "startManifest": "ticks/d0c8aee7119943cc9ad8a533d03216b4-start.json",
+    "startedAt": "2026-11-07T21:51:20.348222Z",
+    "state": "complete_with_unpublished"
+  }
+}
