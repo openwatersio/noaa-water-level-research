@@ -1,0 +1,133 @@
+{
+  "archive": null,
+  "context": {
+    "batchId": "20261108T095113Z-b47e7f1b52fb48788791fa01f71b91b6",
+    "codeCommit": "8e1b7c927016fd192a240caa05ea46f99c986523",
+    "createdAt": "2026-11-08T09:51:13.204865Z",
+    "event": "workflow_dispatch",
+    "origin": "github",
+    "python": "3.12.16 (main, Oct 26 2026, 02:48:44) [GCC 15.2.0]",
+    "runAttempt": "1",
+    "runId": "42468909876",
+    "scheduledAt": null,
+    "scheduling": {
+      "actionsCreatedAt": "2026-11-08T09:51:03Z",
+      "actionsStartedAt": "2026-11-08T09:51:03Z",
+      "admittedAt": "2026-11-08T09:51:13.950192Z",
+      "cronScheduledAt": "2026-11-08T09:50:57.575Z",
+      "dispatchId": "e3273cd6-c695-4aee-83ef-acbe9439f8b8",
+      "dispatchedAt": "2026-11-08T09:51:02.045Z",
+      "expectedCommit": "8e1b7c927016fd192a240caa05ea46f99c986523",
+      "slot": "2026-11-08T09:50:00Z",
+      "source": "external-watchdog"
+    }
+  },
+  "exitCode": 1,
+  "finishedAt": "2026-11-08T09:52:39.158587Z",
+  "publicationError": "HTTPError: HTTP Error 504: Gateway Time-out",
+  "startedAt": "2026-11-08T09:51:13.959316Z",
+  "state": "publication_failed",
+  "tick": {
+    "acquisitionGap": {
+      "elapsedSeconds": 7202.800149,
+      "previousAttemptAt": "2026-11-08T07:51:20.138829Z",
+      "reason": "host_or_scheduler_acquisition_uncertainty"
+    },
+    "attemptId": "eb9de0514d2b4dfb8339446e85984077",
+    "exitCode": 0,
+    "finishedAt": "2026-11-08T09:51:53.096426Z",
+    "forecastCycles": [
+      "2026-11-08T06:00:00Z",
+      "2026-11-08T00:00:00Z",
+      "2026-11-07T18:00:00Z"
+    ],
+    "forecastStore": "forecasts",
+    "forecasts": [
+      {
+        "contractReport": null,
+        "contractStatus": null,
+        "cycleAt": "2026-11-08T06:00:00Z",
+        "manifest": "forecasts/attempt-20261108-06-c0561d28f5f0438291fdaff410270964.json",
+        "products": {
+          "csv": {
+            "httpStatus": 404,
+            "state": "http_error"
+          },
+          "shef": {
+            "httpStatus": 404,
+            "state": "http_error"
+          }
+        },
+        "state": "expected_unpublished"
+      },
+      {
+        "contractReport": "forecasts/attempt-20261108-00-6cce338356954c0fa52e1b4039b70fc8-contract.json",
+        "contractStatus": "disagreement",
+        "cycleAt": "2026-11-08T00:00:00Z",
+        "manifest": "forecasts/attempt-20261108-00-6cce338356954c0fa52e1b4039b70fc8.json",
+        "products": {
+          "csv": {
+            "httpStatus": 200,
+            "state": "complete"
+          },
+          "shef": {
+            "httpStatus": 200,
+            "state": "complete"
+          }
+        },
+        "state": "complete"
+      },
+      {
+        "contractReport": "forecasts/attempt-20261107-18-e9dd70507fce475ebd7313416aacdd5f-contract.json",
+        "contractStatus": "disagreement",
+        "cycleAt": "2026-11-07T18:00:00Z",
+        "manifest": "forecasts/attempt-20261107-18-e9dd70507fce475ebd7313416aacdd5f.json",
+        "products": {
+          "csv": {
+            "httpStatus": 200,
+            "state": "complete"
+          },
+          "shef": {
+            "httpStatus": 200,
+            "state": "complete"
+          }
+        },
+        "state": "complete"
+      }
+    ],
+    "limits": {
+      "maxBytesPerProduct": 16777216,
+      "timeoutSeconds": 30
+    },
+    "manifest": "ticks/eb9de0514d2b4dfb8339446e85984077.json",
+    "observationStore": "observations",
+    "observationWindow": {
+      "beginAt": "2026-11-03T09:48:00Z",
+      "endAt": "2026-11-08T09:48:00Z"
+    },
+    "observations": [
+      {
+        "error": null,
+        "manifest": "observations/attempt-eb9de0514d2b4dfb8339446e85984077-9449880.json",
+        "state": "complete",
+        "station": "9449880"
+      },
+      {
+        "error": null,
+        "manifest": "observations/attempt-eb9de0514d2b4dfb8339446e85984077-9444900.json",
+        "state": "complete",
+        "station": "9444900"
+      },
+      {
+        "error": null,
+        "manifest": "observations/attempt-eb9de0514d2b4dfb8339446e85984077-9447130.json",
+        "state": "complete",
+        "station": "9447130"
+      }
+    ],
+    "schemaVersion": 1,
+    "startManifest": "ticks/eb9de0514d2b4dfb8339446e85984077-start.json",
+    "startedAt": "2026-11-08T09:51:22.938978Z",
+    "state": "complete_with_unpublished"
+  }
+}
