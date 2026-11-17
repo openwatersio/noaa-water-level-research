@@ -1,0 +1,131 @@
+{
+  "archive": {
+    "releaseId": 448929571,
+    "tag": "receipts-20261117T165111Z-a1fc1f3b752146e3acfb0054101d6556"
+  },
+  "context": {
+    "batchId": "20261117T165111Z-a1fc1f3b752146e3acfb0054101d6556",
+    "codeCommit": "8e1b7c927016fd192a240caa05ea46f99c986523",
+    "createdAt": "2026-11-17T16:51:11.680622Z",
+    "event": "workflow_dispatch",
+    "origin": "github",
+    "python": "3.12.16 (main, Oct 26 2026, 02:48:44) [GCC 15.2.0]",
+    "runAttempt": "1",
+    "runId": "44130432242",
+    "scheduledAt": null,
+    "scheduling": {
+      "actionsCreatedAt": "2026-11-17T16:51:03Z",
+      "actionsStartedAt": "2026-11-17T16:51:03Z",
+      "admittedAt": "2026-11-17T16:51:12.460029Z",
+      "cronScheduledAt": "2026-11-17T16:50:57.575Z",
+      "dispatchId": "794e6a5d-2136-488f-8cd6-5eaa5b245719",
+      "dispatchedAt": "2026-11-17T16:51:01.984Z",
+      "expectedCommit": "8e1b7c927016fd192a240caa05ea46f99c986523",
+      "slot": "2026-11-17T16:50:00Z",
+      "source": "external-watchdog"
+    }
+  },
+  "exitCode": 1,
+  "finishedAt": "2026-11-17T16:52:02.690574Z",
+  "startedAt": "2026-11-17T16:51:12.470958Z",
+  "state": "acquisition_failed",
+  "tick": {
+    "acquisitionGap": null,
+    "attemptId": "816cc972c35c44fabe45b513c9e8d499",
+    "exitCode": 1,
+    "finishedAt": "2026-11-17T16:51:53.845093Z",
+    "forecastCycles": [
+      "2026-11-17T12:00:00Z",
+      "2026-11-17T06:00:00Z",
+      "2026-11-17T00:00:00Z"
+    ],
+    "forecastStore": "forecasts",
+    "forecasts": [
+      {
+        "contractReport": null,
+        "contractStatus": null,
+        "cycleAt": "2026-11-17T12:00:00Z",
+        "manifest": "forecasts/attempt-20261117-12-44ede2799b9d4c5993c924cdbfaa307c.json",
+        "products": {
+          "csv": {
+            "httpStatus": 200,
+            "state": "complete"
+          },
+          "shef": {
+            "httpStatus": 503,
+            "state": "http_error"
+          }
+        },
+        "state": "collection_failed"
+      },
+      {
+        "contractReport": null,
+        "contractStatus": null,
+        "cycleAt": "2026-11-17T06:00:00Z",
+        "manifest": "forecasts/attempt-20261117-06-f3474fc607ab4c7387425c0ddf8346e9.json",
+        "products": {
+          "csv": {
+            "httpStatus": 200,
+            "state": "complete"
+          },
+          "shef": {
+            "httpStatus": 503,
+            "state": "partial"
+          }
+        },
+        "state": "collection_failed"
+      },
+      {
+        "contractReport": null,
+        "contractStatus": null,
+        "cycleAt": "2026-11-17T00:00:00Z",
+        "manifest": "forecasts/attempt-20261117-00-921f4550c6a2403eb7cf0cc518547ad9.json",
+        "products": {
+          "csv": {
+            "httpStatus": 503,
+            "state": "partial"
+          },
+          "shef": {
+            "httpStatus": 503,
+            "state": "partial"
+          }
+        },
+        "state": "collection_failed"
+      }
+    ],
+    "limits": {
+      "maxBytesPerProduct": 16777216,
+      "timeoutSeconds": 30
+    },
+    "manifest": "ticks/816cc972c35c44fabe45b513c9e8d499.json",
+    "observationStore": "observations",
+    "observationWindow": {
+      "beginAt": "2026-11-12T16:48:00Z",
+      "endAt": "2026-11-17T16:48:00Z"
+    },
+    "observations": [
+      {
+        "error": null,
+        "manifest": "observations/attempt-816cc972c35c44fabe45b513c9e8d499-9449880.json",
+        "state": "complete",
+        "station": "9449880"
+      },
+      {
+        "error": null,
+        "manifest": "observations/attempt-816cc972c35c44fabe45b513c9e8d499-9444900.json",
+        "state": "complete",
+        "station": "9444900"
+      },
+      {
+        "error": null,
+        "manifest": "observations/attempt-816cc972c35c44fabe45b513c9e8d499-9447130.json",
+        "state": "complete",
+        "station": "9447130"
+      }
+    ],
+    "schemaVersion": 1,
+    "startManifest": "ticks/816cc972c35c44fabe45b513c9e8d499-start.json",
+    "startedAt": "2026-11-17T16:51:25.028276Z",
+    "state": "collection_failed"
+  }
+}
