@@ -47,7 +47,7 @@ jobs:
         run: python -B -m pipeline --work "$RUNNER_TEMP/noaa" collect
       - name: Retain interrupted local evidence for recovery
         if: failure() || cancelled()
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: interrupted-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
